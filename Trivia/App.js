@@ -16,7 +16,8 @@ function HomeScreen({navigation}) {
   const score = 0
   return (
     <View style={styles.view}>
-      <Text style={styles.text}>Trivia</Text>
+      <Text style={styles.text}>Trivia Game</Text>
+      <Text style={styles.directions}>Click on a category to answer a question. Correct answers earn you 10 points!</Text>
       <Button buttonStyle={styles.ArtButtons} title="Arts" onPress={() => navigation.navigate('Arts')}></Button>
       <Button buttonStyle={styles.SportsButtons} title="Sports" onPress={() => navigation.navigate('Sports')}></Button>
       <Button buttonStyle={styles.ScienceButtons} title="Science" onPress={() => navigation.navigate('Science')}></Button>
@@ -80,33 +81,40 @@ const styles = StyleSheet.create(
       backgroundColor: "#76c893",
       fontFamily: "Trebuchet MS",
       alignContent: 'center',
-      padding: 20, 
+      padding: 30, 
     },
     SportsButtons: {
       backgroundColor: "#34a0a4",
       fontFamily: "Trebuchet MS",
       alignContent: 'center',
-      padding: 20, 
+      padding: 30, 
     },
     ScienceButtons: {
       backgroundColor: "#168aad",
       fontFamily: "Trebuchet MS",
       alignContent: 'center',
-      padding: 20, 
+      padding: 30, 
     },
     HistoryButtons: {
       backgroundColor: "#1a759f",
       fontFamily: "Trebuchet MS",
       alignContent: 'center',
-      padding: 20, 
+      padding: 30, 
     },
     MathButtons: {
       backgroundColor: "#1e6091",
       fontFamily: "Trebuchet MS",
       alignContent: 'center',
-      padding: 20, 
+      padding: 30, 
     },
     text: {
+      color: '#184e77',
+      fontFamily: 'Trebuchet MS',
+      fontSize: 50,
+      textAlign: 'center',
+      padding: 10,
+    },
+    directions: {
       color: '#184e77',
       fontFamily: 'Trebuchet MS',
       fontSize: 30,
