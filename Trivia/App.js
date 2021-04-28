@@ -9,11 +9,13 @@ import Sports from './components/Sports';
 import Science from './components/Science';
 import History from './components/History';
 import Math from './components/Math';
+import Score from './components/Score';
 
 
+const score = 0
 
 function HomeScreen({navigation}) {
-  const score = 0
+
   return (
     <View style={styles.view}>
       <Text style={styles.text}>Trivia Game</Text>
@@ -23,6 +25,7 @@ function HomeScreen({navigation}) {
       <Button buttonStyle={styles.ScienceButtons} title="Science" onPress={() => navigation.navigate('Science')}></Button>
       <Button buttonStyle={styles.HistoryButtons} title="History" onPress={() => navigation.navigate('History')}></Button>
       <Button buttonStyle={styles.MathButtons} title="Math" onPress={() => navigation.navigate('Math')}></Button>
+      <Button buttonStyle={styles.MathButtons} title="Score" onPress={() => navigation.navigate('Score')}></Button>
     </View>
   );
 }
@@ -68,6 +71,15 @@ function MathScreen({navigation}) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Math></Math>
       <Button buttonStyle={styles.MathButtons} title="Return Home" onPress={()=> navigation.goBack()}></Button>
+    </View>
+  );
+}
+
+function ScoreScreen({navigation, score}) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Score score={score}></Score>
+      <Button buttonStyle={styles.ArtButtons} title="Return Home" onPress={()=> navigation.goBack()}></Button>
     </View>
   );
 }
@@ -139,6 +151,7 @@ function App() {
         <Stack.Screen name="Science" component={ScienceScreen} />
         <Stack.Screen name="History" component={HistoryScreen} />
         <Stack.Screen name="Math" component={MathScreen} />
+        <Stack.Screen name="Score" component={ScoreScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
