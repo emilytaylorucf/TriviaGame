@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -6,8 +7,10 @@ import {Button} from 'react-native-elements';
 import Arts from './components/Arts';
 
 function HomeScreen({navigation}) {
+  
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{fontSize: 30}}>Trivia</Text>
       <Button title="Arts" onPress={() => navigation.navigate('Arts')}></Button>
       <Button title="Sports" onPress={() => navigation.navigate('Sports')}></Button>
       <Button title="Science" onPress={() => navigation.navigate('Science')}></Button>

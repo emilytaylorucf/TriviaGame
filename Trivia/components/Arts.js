@@ -35,7 +35,7 @@ let answers = [
 export default class Arts extends React.Component{
     constructor(props){
         super(props)
-        this.state = {answers}
+        this.state = {answers,}
     }
 
     checkItem = (itemId) => {
@@ -44,23 +44,26 @@ export default class Arts extends React.Component{
             let itemIndex = prevList.findIndex((item) => item.id == itemId)
             prevList[itemIndex] = {
                 ...prevList[itemIndex],
-                checked: !prevList[itemIndex].checked,
                 correct: prevList[itemIndex].correct,
             }
             return {answers: [...prevList]}
           })
     }
 
+    checkAnswer = (itemCorrect) => {
+        if (itemCorrect){
+            return <Text>You are correct!</Text>
+        } 
+    }
 
     render(){
     return(
         <View>
             <Text style={{fontSize: 40}}>Which famous painter was also a sculptor, artist, and engineer?</Text>
             {answers.map((item)=> (
-                <CheckBox title={item.name} onPress={()=> this.checkItem(item.id)} checked={item.checked} id={item.id} correct={item.correct}></CheckBox>
+                <Button title={item.name} onPress={()=> this.checkAnswer(item.correct)} id={item.id}></Button>
             ))}
-
-            { this.state.answers.correct ? <Text>Your answer is correct!</Text> : undefined}
+            
 
             
         </View>
