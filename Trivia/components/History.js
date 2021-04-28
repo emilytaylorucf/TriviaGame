@@ -54,13 +54,14 @@ const styles = StyleSheet.create(
 
 export default function History(){
 
-    const [score, setScore] = useState(0)
-
+    let [score, setScore] = useState(0)
+    const [text, setText] = useState("")
     let checkAnswer = (itemCorrect) => {
         if (itemCorrect===true){
             setScore(score + 10)
+            setText("Your answer is correct!")
     } else{
-        console.log("wrong answer")
+        setText("Your answer is incorrect. Try again.")
     }
 }
 
@@ -70,7 +71,7 @@ export default function History(){
             {answers.map((item)=> (
                 <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
-            <Text style={styles.text}>{score}</Text>     
+            <Text style={styles.text}>Points Earned: {score}</Text>     
         </View>
     )
     

@@ -9,8 +9,10 @@ import Sports from './components/Sports';
 import Science from './components/Science';
 import History from './components/History';
 
+
+
 function HomeScreen({navigation}) {
-  
+  let score = 0
   return (
     <View style={styles.view}>
       <Text style={styles.text}>Trivia</Text>
@@ -18,6 +20,7 @@ function HomeScreen({navigation}) {
       <Button style={styles.buttons} title="Sports" onPress={() => navigation.navigate('Sports')}></Button>
       <Button style={styles.buttons} title="Science" onPress={() => navigation.navigate('Science')}></Button>
       <Button style={styles.buttons} title="History" onPress={() => navigation.navigate('History')}></Button>
+      <Text style={styles.text}>Overall Score: {score}</Text>
     </View>
   );
 }
@@ -59,6 +62,7 @@ function HistoryScreen({navigation}) {
 }
 
 
+
 const Stack = createStackNavigator();
 
 const styles = StyleSheet.create(
@@ -82,6 +86,7 @@ const styles = StyleSheet.create(
 )
 
 function App() {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
