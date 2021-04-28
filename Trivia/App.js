@@ -29,7 +29,7 @@ function HomeScreen({navigation}) {
 function ArtsScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Arts score = {score}></Arts>
+      <Arts></Arts>
       <Button buttonStyle={styles.ArtButtons} title="Return Home" onPress={()=> navigation.goBack()}></Button>
     </View>
   );
@@ -65,7 +65,7 @@ function HistoryScreen({navigation}) {
 function MathScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Arts score = {score}></Arts>
+      <Math></Math>
       <Button buttonStyle={styles.ArtButtons} title="Return Home" onPress={()=> navigation.goBack()}></Button>
     </View>
   );
