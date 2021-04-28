@@ -34,12 +34,14 @@ let answers = [
 
 const styles = StyleSheet.create(
     {
-      buttons: {
-        backgroundColor: '#bdb2ff',
-        fontFamily: "Times New Roman"
-      },
+        HistoryButtons: {
+            backgroundColor: "#1a759f",
+            fontFamily: "Trebuchet MS",
+            alignContent: 'center',
+            padding: 5, 
+          },
       text: {
-        color: '#5e60ce',
+        color: '#168aad',
         fontFamily: 'Trebuchet MS',
         fontSize: 30,
       },
@@ -69,7 +71,7 @@ export default function History(){
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={styles.text}>In what year did the Titanic sink?</Text>
             {answers.map((item)=> (
-                <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
+                <Button buttonStyle={styles.HistoryButtons} title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
             <Text style={styles.text}>Points Earned: {score}</Text>
             <Text style={styles.text}>{text}</Text>      

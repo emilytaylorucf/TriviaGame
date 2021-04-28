@@ -35,12 +35,14 @@ let answers = [
 
 const styles = StyleSheet.create(
     {
-      buttons: {
-        backgroundColor: '#bdb2ff',
-        fontFamily: "Times New Roman"
-      },
+        ArtButtons: {
+            backgroundColor: "#76c893",
+            fontFamily: "Trebuchet MS",
+            alignContent: 'center',
+            padding: 5, 
+          },
       text: {
-        color: '#5e60ce',
+        color: '#168aad',
         fontFamily: 'Trebuchet MS',
         fontSize: 30,
       },
@@ -70,7 +72,7 @@ export default function Arts(){
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={styles.text}>Which famous painter was also a sculptor, artist, and engineer?</Text>
             {answers.map((item)=> (
-                <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
+                <Button buttonStyle={styles.ArtButtons} title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
             
             <Text style={styles.text}>Points Earned: {score}</Text>

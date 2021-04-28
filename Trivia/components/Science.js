@@ -34,12 +34,14 @@ let answers = [
 
 const styles = StyleSheet.create(
     {
-      buttons: {
-        backgroundColor: '#bdb2ff',
-        fontFamily: "Times New Roman"
-      },
+        ScienceButtons: {
+            backgroundColor: "#168aad",
+            fontFamily: "Trebuchet MS",
+            alignContent: 'center',
+            padding: 5, 
+          },
       text: {
-        color: '#5e60ce',
+        color: '#168aad',
         fontFamily: 'Trebuchet MS',
         fontSize: 30,
       },
@@ -69,7 +71,7 @@ export default function Science(){
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={styles.text}>What planet has the most moons?</Text>
             {answers.map((item)=> (
-                <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
+                <Button buttonStyle={styles.ScienceButtons} title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
             <Text style={styles.text}>Points Earned: {score}</Text>
             <Text style={styles.text}>{text}</Text>  
