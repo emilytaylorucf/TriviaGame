@@ -50,9 +50,7 @@ export default function Sports(){
             {answers.map((item)=> (
                 <Button title={item.name} onPress={()=> this.checkAnswer(item.correct)} id={item.id}></Button>
             ))}
-            
-
-            
+            <Text style={{fontSize: 30}}>{score}</Text>    
         </View>
     )
 
