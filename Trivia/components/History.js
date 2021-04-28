@@ -15,7 +15,7 @@ let answers = [
     {
         id: 2,
         name: "1921",
-        correct: true,
+        correct: false,
         checked: false,
     },
     {
@@ -27,46 +27,31 @@ let answers = [
     {
         id: 4,
         name: "1912",
-        correct: false,
+        correct: true,
         checked: false,
     }
 ]
 
-export default class History extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {answers,}
-    }
+export default function History(){
 
-    checkItem = (itemId) => {
-        this.setState((prevState) => {
-            let prevList = prevState.answers
-            let itemIndex = prevList.findIndex((item) => item.id == itemId)
-            prevList[itemIndex] = {
-                ...prevList[itemIndex],
-                correct: prevList[itemIndex].correct,
-            }
-            return {answers: [...prevList]}
-          })
-    }
+    const [score, setScore] = useState(0)
 
-    checkAnswer = (itemCorrect) => {
-        if (itemCorrect){
-            return <Text>You are correct!</Text>
-        } 
+    let checkAnswer = (itemCorrect) => {
+        if (itemCorrect===true){
+            setScore(score + 10)
+    } else{
+        console.log("wrong answer")
     }
+}
 
-    render(){
     return(
-        <View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{fontSize: 40}}>In what year did the Titanic sink?</Text>
             {answers.map((item)=> (
-                <Button title={item.name} onPress={()=> this.checkAnswer(item.correct)} id={item.id}></Button>
+                <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
-            
-
-            
+            <Text style={{fontSize: 30}}>{score}</Text>     
         </View>
     )
-    }
+    
 }

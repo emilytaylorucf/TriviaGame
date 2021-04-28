@@ -32,27 +32,29 @@ let answers = [
     }
 ]
 
-const [score, setScore] = useState(0)
+
+
 
 export default function Arts(){
+    const [score, setScore] = useState(0)
 
     let checkAnswer = (itemCorrect) => {
         if (itemCorrect===true){
             setScore(score + 10)
-        } else{
-            textDisplay = <Text></Text>
-        }
+    } else{
+        console.log("wrong answer")
     }
+}
 
  
     return(
-        <View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{fontSize: 40}}>Which famous painter was also a sculptor, artist, and engineer?</Text>
             {answers.map((item)=> (
-                <Button title={item.name} onPress={checkAnswer(item.correct)}></Button>
+                <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
             
-            {correctAnswer ? <Text>Correct!</Text> : undefined}
+            <Text style={{fontSize: 30}}>{score}</Text>
             
         </View>
     )
