@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {Button, CheckBox} from 'react-native-elements';
@@ -32,6 +32,26 @@ let answers = [
     }
 ]
 
+const styles = StyleSheet.create(
+    {
+      buttons: {
+        backgroundColor: '#bdb2ff',
+        fontFamily: "Times New Roman"
+      },
+      text: {
+        color: '#5e60ce',
+        fontFamily: 'Trebuchet MS',
+        fontSize: 30,
+      },
+      view: {
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: '#9bf6ff',
+        flex: 1,
+      },
+    }
+  )
+
 export default function History(){
 
     const [score, setScore] = useState(0)
@@ -46,11 +66,11 @@ export default function History(){
 
     return(
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{fontSize: 40}}>In what year did the Titanic sink?</Text>
+            <Text style={styles.text}>In what year did the Titanic sink?</Text>
             {answers.map((item)=> (
                 <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
-            <Text style={{fontSize: 30}}>{score}</Text>     
+            <Text style={styles.text}>{score}</Text>     
         </View>
     )
     

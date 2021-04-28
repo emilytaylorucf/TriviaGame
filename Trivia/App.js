@@ -12,9 +12,9 @@ import History from './components/History';
 function HomeScreen({navigation}) {
   
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{fontSize: 30}}>Trivia</Text>
-      <Button style={styles.buttons} title="Arts" onPress={() => navigation.navigate('Arts')}></Button>
+    <View style={styles.view}>
+      <Text style={styles.text}>Trivia</Text>
+      <Button color="red" title="Arts" onPress={() => navigation.navigate('Arts')}></Button>
       <Button style={styles.buttons} title="Sports" onPress={() => navigation.navigate('Sports')}></Button>
       <Button style={styles.buttons} title="Science" onPress={() => navigation.navigate('Science')}></Button>
       <Button style={styles.buttons} title="History" onPress={() => navigation.navigate('History')}></Button>
@@ -66,7 +66,18 @@ const styles = StyleSheet.create(
     buttons: {
       backgroundColor: '#bdb2ff',
       fontFamily: "Times New Roman"
-    }
+    },
+    text: {
+      color: '#5e60ce',
+      fontFamily: 'Trebuchet MS',
+      fontSize: 30,
+    },
+    view: {
+      alignItems: 'center', 
+      justifyContent: 'center',
+      backgroundColor: '#9bf6ff',
+      flex: 1,
+    },
   }
 )
 
