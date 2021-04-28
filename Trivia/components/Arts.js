@@ -32,41 +32,29 @@ let answers = [
     }
 ]
 
-export default class Arts extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {answers,}
+const [score, setScore] = useState(0)
+
+export default function Arts(){
+
+    let checkAnswer = (itemCorrect) => {
+        if (itemCorrect===true){
+            setScore(score + 10)
+        } else{
+            textDisplay = <Text></Text>
+        }
     }
 
-    checkItem = (itemId) => {
-        this.setState((prevState) => {
-            let prevList = prevState.answers
-            let itemIndex = prevList.findIndex((item) => item.id == itemId)
-            prevList[itemIndex] = {
-                ...prevList[itemIndex],
-                correct: prevList[itemIndex].correct,
-            }
-            return {answers: [...prevList]}
-          })
-    }
-
-    checkAnswer = (itemCorrect) => {
-        if (itemCorrect){
-            return <Text>You are correct!</Text>
-        } 
-    }
-
-    render(){
+ 
     return(
         <View>
             <Text style={{fontSize: 40}}>Which famous painter was also a sculptor, artist, and engineer?</Text>
             {answers.map((item)=> (
-                <Button title={item.name} onPress={()=> this.checkAnswer(item.correct)} id={item.id}></Button>
+                <Button title={item.name} onPress={checkAnswer(item.correct)}></Button>
             ))}
             
-
+            {correctAnswer ? <Text>Correct!</Text> : undefined}
             
         </View>
     )
-    }
+
 }
