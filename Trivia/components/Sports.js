@@ -48,7 +48,7 @@ export default function Sports(){
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{fontSize: 40}}>What country won the first World Cup?</Text>
             {answers.map((item)=> (
-                <Button title={item.name} onPress={()=> this.checkAnswer(item.correct)} id={item.id}></Button>
+                <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
             <Text style={{fontSize: 30}}>{score}</Text>    
         </View>
