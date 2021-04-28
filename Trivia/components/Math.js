@@ -55,7 +55,7 @@ const styles = StyleSheet.create(
     }
   )
 
-export default function Arts(){
+export default function Math(){
     let [score, setScore] = useState(0)
     const [text, setText] = useState("")
     let checkAnswer = (itemCorrect) => {

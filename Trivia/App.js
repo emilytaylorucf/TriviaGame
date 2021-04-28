@@ -8,7 +8,7 @@ import Arts from './components/Arts';
 import Sports from './components/Sports';
 import Science from './components/Science';
 import History from './components/History';
-import { block } from 'react-native-reanimated';
+import Math from './components/Math';
 
 
 
@@ -21,11 +21,12 @@ function HomeScreen({navigation}) {
       <Button buttonStyle={styles.SportsButtons} title="Sports" onPress={() => navigation.navigate('Sports')}></Button>
       <Button buttonStyle={styles.ScienceButtons} title="Science" onPress={() => navigation.navigate('Science')}></Button>
       <Button buttonStyle={styles.HistoryButtons} title="History" onPress={() => navigation.navigate('History')}></Button>
+      <Button buttonStyle={styles.ArtButtons} title="Math" onPress={() => navigation.navigate('Math')}></Button>
     </View>
   );
 }
 
-function ArtsScreen({navigation, score}) {
+function ArtsScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Arts score = {score}></Arts>
@@ -61,7 +62,14 @@ function HistoryScreen({navigation}) {
   );
 }
 
-
+function MathScreen({navigation}) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Arts score = {score}></Arts>
+      <Button buttonStyle={styles.ArtButtons} title="Return Home" onPress={()=> navigation.goBack()}></Button>
+    </View>
+  );
+}
 
 const Stack = createStackNavigator();
 
@@ -113,6 +121,7 @@ function App() {
         <Stack.Screen name="Sports" component={SportsScreen} />
         <Stack.Screen name="Science" component={ScienceScreen} />
         <Stack.Screen name="History" component={HistoryScreen} />
+        <Stack.Screen name="Math" component={MathScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
