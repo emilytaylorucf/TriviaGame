@@ -32,41 +32,26 @@ let answers = [
     }
 ]
 
-export default class Science extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {answers,}
-    }
+export default function Science(){
 
-    checkItem = (itemId) => {
-        this.setState((prevState) => {
-            let prevList = prevState.answers
-            let itemIndex = prevList.findIndex((item) => item.id == itemId)
-            prevList[itemIndex] = {
-                ...prevList[itemIndex],
-                correct: prevList[itemIndex].correct,
-            }
-            return {answers: [...prevList]}
-          })
-    }
+    const [score, setScore] = useState(0)
 
-    checkAnswer = (itemCorrect) => {
-        if (itemCorrect){
-            return <Text>You are correct!</Text>
-        } 
+    let checkAnswer = (itemCorrect) => {
+        if (itemCorrect===true){
+            setScore(score + 10)
+    } else{
+        console.log("wrong answer")
     }
+}
 
-    render(){
     return(
-        <View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{fontSize: 40}}>What planet has the most moons?</Text>
             {answers.map((item)=> (
-                <Button title={item.name} onPress={()=> this.checkAnswer(item.correct)} id={item.id}></Button>
+                <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
-            
-
-            
+            <Text style={{fontSize: 30}}>{score}</Text>   
         </View>
     )
-    }
+    
 }
