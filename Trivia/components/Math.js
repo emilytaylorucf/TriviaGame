@@ -35,22 +35,20 @@ let answers = [
 
 const styles = StyleSheet.create(
     {
-        ArtButtons: {
-            backgroundColor: "#76c893",
+        MathButtons: {
+            backgroundColor: "#1e6091",
             fontFamily: "Trebuchet MS",
             alignContent: 'center',
-            padding: 5, 
+            padding: 15, 
           },
       text: {
-        color: '#168aad',
+        color: '#184e77',
         fontFamily: 'Trebuchet MS',
         fontSize: 30,
+        padding: 20,
       },
       view: {
         alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: '#9bf6ff',
-        flex: 1,
       },
     }
   )
@@ -69,10 +67,10 @@ export default function Math(){
 
  
     return(
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={styles.view}>
             <Text style={styles.text}>Which answer below is the only even prime number?</Text>
             {answers.map((item)=> (
-                <Button buttonStyle={styles.ArtButtons} title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
+                <Button buttonStyle={styles.MathButtons} title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
             
             <Text style={styles.text}>Points Earned: {score}</Text>

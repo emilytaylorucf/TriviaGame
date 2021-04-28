@@ -21,7 +21,7 @@ function HomeScreen({navigation}) {
       <Button buttonStyle={styles.SportsButtons} title="Sports" onPress={() => navigation.navigate('Sports')}></Button>
       <Button buttonStyle={styles.ScienceButtons} title="Science" onPress={() => navigation.navigate('Science')}></Button>
       <Button buttonStyle={styles.HistoryButtons} title="History" onPress={() => navigation.navigate('History')}></Button>
-      <Button buttonStyle={styles.ArtButtons} title="Math" onPress={() => navigation.navigate('Math')}></Button>
+      <Button buttonStyle={styles.MathButtons} title="Math" onPress={() => navigation.navigate('Math')}></Button>
     </View>
   );
 }
@@ -66,10 +66,11 @@ function MathScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Math></Math>
-      <Button buttonStyle={styles.ArtButtons} title="Return Home" onPress={()=> navigation.goBack()}></Button>
+      <Button buttonStyle={styles.MathButtons} title="Return Home" onPress={()=> navigation.goBack()}></Button>
     </View>
   );
 }
+
 
 const Stack = createStackNavigator();
 
@@ -79,34 +80,42 @@ const styles = StyleSheet.create(
       backgroundColor: "#76c893",
       fontFamily: "Trebuchet MS",
       alignContent: 'center',
-      padding: 5, 
+      padding: 20, 
     },
     SportsButtons: {
       backgroundColor: "#34a0a4",
       fontFamily: "Trebuchet MS",
       alignContent: 'center',
-      padding: 5, 
+      padding: 20, 
     },
     ScienceButtons: {
       backgroundColor: "#168aad",
       fontFamily: "Trebuchet MS",
       alignContent: 'center',
-      padding: 5, 
+      padding: 20, 
     },
     HistoryButtons: {
       backgroundColor: "#1a759f",
       fontFamily: "Trebuchet MS",
       alignContent: 'center',
-      padding: 5, 
+      padding: 20, 
+    },
+    MathButtons: {
+      backgroundColor: "#1e6091",
+      fontFamily: "Trebuchet MS",
+      alignContent: 'center',
+      padding: 20, 
     },
     text: {
-      color: '#168aad',
+      color: '#184e77',
       fontFamily: 'Trebuchet MS',
       fontSize: 30,
       textAlign: 'center',
+      padding: 10,
     },
     view: {
-      backgroundColor: "#ffffff"
+      backgroundColor: "#ffffff",
+      marginTop: 15,
     },
   }
 )

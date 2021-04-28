@@ -38,12 +38,13 @@ const styles = StyleSheet.create(
             backgroundColor: "#1a759f",
             fontFamily: "Trebuchet MS",
             alignContent: 'center',
-            padding: 5, 
+            padding: 15, 
           },
       text: {
-        color: '#168aad',
+        color: '#184e77',
         fontFamily: 'Trebuchet MS',
         fontSize: 30,
+        padding: 20
       },
       view: {
         alignItems: 'center', 
