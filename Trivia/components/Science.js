@@ -32,7 +32,7 @@ let answers = [
     }
 ]
 
-export default class Sports extends React.Component{
+export default class Science extends React.Component{
     constructor(props){
         super(props)
         this.state = {answers,}
