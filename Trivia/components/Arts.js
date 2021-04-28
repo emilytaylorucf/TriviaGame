@@ -54,7 +54,7 @@ const styles = StyleSheet.create(
   )
 
 export default function Arts(){
-    const [score, setScore] = useState(0)
+    let [score, setScore] = useState(0)
     const [text, setText] = useState("")
     let checkAnswer = (itemCorrect) => {
         if (itemCorrect===true){

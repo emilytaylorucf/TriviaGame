@@ -71,7 +71,8 @@ export default function Science(){
             {answers.map((item)=> (
                 <Button title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>
             ))}
-            <Text style={styles.text}>Points Earned: {score}</Text>   
+            <Text style={styles.text}>Points Earned: {score}</Text>
+            <Text style={styles.text}>{text}</Text>  
         </View>
     )
     
