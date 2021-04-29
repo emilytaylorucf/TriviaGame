@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Button, CheckBox} from 'react-native-elements';
+import {Button} from 'react-native-elements';
 import {useState} from 'react';
 
 
@@ -33,6 +33,30 @@ let points = [
     }
 ]
 
+const styles = StyleSheet.create(
+    {
+        ScoreButtons: {
+            backgroundColor: "#76c893",
+            fontFamily: "Trebuchet MS",
+            alignContent: 'center',
+            padding: 15, 
+          },
+      text: {
+        color: '#184e77',
+        fontFamily: 'Trebuchet MS',
+        fontSize: 30,
+        padding: 20,
+        textAlign: 'center',
+      },
+      view: {
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: '#9bf6ff',
+        flex: 1,
+      },
+    }
+  )
+
 export default class Score extends React.Component{
     constructor(props){
         super(props)
@@ -43,24 +67,25 @@ export default class Score extends React.Component{
             textDisplay: "",
         }
     }
+
     addPoints(itemId) {
         if(itemId===0){
-            this.state.textDisplay = "Beginner"
+            this.setState({textDisplay: "Beginner"})
         }
         if(itemId===1){
-            this.state.textDisplay = "Beginner"
+            this.setState({textDisplay: "Beginner"})
         }
         if(itemId===2){
-            this.state.textDisplay = "Intermediate"
+            this.setState({textDisplay: "Intermediate"})
         }
         if(itemId===3){
-            this.state.textDisplay = "Intermediate"
+            this.setState({textDisplay: "Intermediate"})
         }
         if(itemId===4){
-            this.state.textDisplay = "Advanced"
+            this.setState({textDisplay: "Advanced"})
         }
         if(itemId===5){
-            this.state.textDisplay = "Supreme Overlord"
+            this.setState({textDisplay: "Supreme Trivia Winner!"})
         } else{
             this.state.textDisplay
         }
@@ -69,12 +94,12 @@ export default class Score extends React.Component{
     render(){
         return(
         <View>
-            <Text>Final Score!</Text>
-            <Text>Add up your points and see which level you earned!</Text>
+            <Text style={styles.text}>Final Score!</Text>
+            <Text style={styles.text}>Add up your points and see which level you earned!</Text>
             {this.state.points.map((item)=>
-                <Button title = {item.name}  onPress={()=> this.addPoints(item.id)}></Button>
+                <Button buttonStyle={styles.ScoreButtons} title = {item.name}  onPress={()=> this.addPoints(item.id)}></Button>
             )}
-            <Text>{this.state.textDisplay}</Text>
+            <Text style={styles.text}>{this.state.textDisplay}</Text>
         </View>
         )
     }

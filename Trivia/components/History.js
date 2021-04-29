@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Button, CheckBox} from 'react-native-elements';
+import {Button} from 'react-native-elements';
 import {useState} from 'react';
 
 let answers = [
