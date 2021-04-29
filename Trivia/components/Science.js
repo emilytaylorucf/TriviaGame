@@ -10,25 +10,21 @@ let answers = [
         id: 1,
         name:"Saturn",
         correct: false,
-        checked: false,
     },
     {
         id: 2,
         name: "Jupiter",
         correct: true,
-        checked: false,
     },
     {
         id: 3,
         name: "Earth",
         correct: false,
-        checked: false,
     },
     {
         id: 4,
         name: "Saturn",
         correct: false,
-        checked: false,
     }
 ]
 

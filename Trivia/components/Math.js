@@ -10,25 +10,21 @@ let answers = [
         id: 1,
         name:"82",
         correct: false,
-        checked: false,
     },
     {
         id: 2,
         name: "2",
         correct: true,
-        checked: false,
     },
     {
         id: 3,
         name: "14",
         correct: false,
-        checked: false,
     },
     {
         id: 4,
         name: "46",
         correct: false,
-        checked: false,
     }
 ]
 
