@@ -45,7 +45,6 @@ const styles = StyleSheet.create(
       view: {
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: '#9bf6ff',
         flex: 1,
       },
     }
@@ -65,7 +64,7 @@ export default function Science(){
 }
 
     return(
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={styles.view}>
             <Text style={styles.text}>What planet has the most moons?</Text>
             {answers.map((item)=> (
                 <Button buttonStyle={styles.ScienceButtons} title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>

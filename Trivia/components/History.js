@@ -45,7 +45,6 @@ const styles = StyleSheet.create(
       view: {
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: '#9bf6ff',
         flex: 1,
       },
     }
@@ -65,7 +64,7 @@ export default function History(){
 }
 
     return(
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={styles.view}>
             <Text style={styles.text}>In what year did the Titanic sink?</Text>
             {answers.map((item)=> (
                 <Button buttonStyle={styles.HistoryButtons} title={item.name} onPress={()=> checkAnswer(item.correct)}></Button>

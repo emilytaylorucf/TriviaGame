@@ -32,7 +32,7 @@ function HomeScreen({navigation}) {
 
 function ArtsScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.screenView}>
       <Arts></Arts>
       <Button buttonStyle={styles.ArtButtons} title="Next Question" onPress={()=> navigation.navigate('Sports')}></Button>
       <Button buttonStyle={styles.ArtButtons} title="Return Home" onPress={()=> navigation.navigate('Home')}></Button>
@@ -42,7 +42,7 @@ function ArtsScreen({navigation}) {
 
 function SportsScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.screenView}>
       <Sports></Sports>
       <Button buttonStyle={styles.SportsButtons} title="Next Question" onPress={()=> navigation.navigate('Science')}></Button>
       <Button buttonStyle={styles.SportsButtons} title="Return Home" onPress={()=> navigation.navigate('Home')}></Button>
@@ -52,7 +52,7 @@ function SportsScreen({navigation}) {
 
 function ScienceScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.screenView}>
       <Science></Science>
       <Button buttonStyle={styles.ScienceButtons} title="Next Question" onPress={()=> navigation.navigate('History')}></Button>
       <Button buttonStyle={styles.ScienceButtons} title="Return Home" onPress={()=> navigation.navigate('Home')}></Button>
@@ -62,7 +62,7 @@ function ScienceScreen({navigation}) {
 
 function HistoryScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.screenView}>
       <History></History>
       <Button buttonStyle={styles.HistoryButtons} title="Next Question" onPress={()=> navigation.navigate('Math')}></Button>
       <Button buttonStyle={styles.HistoryButtons} title="Return Home" onPress={()=> navigation.navigate('Home')}></Button>
@@ -72,7 +72,7 @@ function HistoryScreen({navigation}) {
 
 function MathScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.screenView}>
       <Math></Math>
       <Button buttonStyle={styles.MathButtons} title="See Your Score" onPress={()=> navigation.navigate('Score')}></Button>
       <Button buttonStyle={styles.MathButtons} title="Return Home" onPress={()=> navigation.navigate('Home')}></Button>
@@ -82,7 +82,7 @@ function MathScreen({navigation}) {
 
 function ScoreScreen({navigation, score}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.screenView}>
       <Score score={score}></Score>
       <Button buttonStyle={styles.ArtButtons} title="Return Home" onPress={()=> navigation.navigate('Home')}></Button>
     </View>
@@ -142,6 +142,11 @@ const styles = StyleSheet.create(
       backgroundColor: "#ffffff",
       marginTop: 15,
     },
+    screenView: {
+      flex: 1, 
+      alignItems: 'center', 
+      justifyContent: 'center'
+    }
   }
 )
 
