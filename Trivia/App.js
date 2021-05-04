@@ -2,6 +2,14 @@
 reviewed how to do stack navigation for a home screen, and created my own screens
 to represent each component/category I have for the trivia game.
 */
+
+/*Citation: https://reactnative.dev/docs/components-and-apis
+I used this source to remember how the components work such as buttons, text, and texts inputs.
+*/
+
+/*Citation: https://reactnative.dev/docs/stylesheet 
+I used this source to review how to create the style sheet object in React Native.
+*/
 import * as React from 'react';
 import {useState} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
